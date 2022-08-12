@@ -7,6 +7,10 @@ class FitnessPlan(models.Model):
     text = models.TextField()
     premium = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.title
+
+
 class Customer(models.Model):
     user = models.OneToOneField(User,   on_delete=models.CASCADE)
     stripe = models.CharField(max_length=255)
